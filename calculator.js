@@ -1,12 +1,11 @@
 
-const Calculate = (function(initN) {
-    
+const Calculate = (function (initN) {
+
     let Calculate = function(initN)
     {        
-
         this._CALLBACKS = {
             add: null,
-            show: null,
+            result: null,
         };
         this.num = initN;
     }
@@ -23,8 +22,8 @@ const Calculate = (function(initN) {
                 this._CALLBACKS.add();
             }
 
-            if ( this._CALLBACKS.show != null) {
-                this._CALLBACKS.show();                
+            if ( this._CALLBACKS.result != null) {
+                this._CALLBACKS.result();                
             }
 
             
@@ -40,8 +39,8 @@ const Calculate = (function(initN) {
                     return this;
                 },
                  
-                show: function (callbackFn) {
-                    _this.show = callbackFn;           
+                result: function (callbackFn) {
+                    _this.result = callbackFn;           
                     display(_this.num);
                     return this;
                 },
@@ -61,6 +60,5 @@ const Calculate = (function(initN) {
 
 
 Calculate(20)
-    .show()
     .add(10)
-    .show();
+    .result();
