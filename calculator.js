@@ -57,8 +57,3 @@ const Calculate = (function (initN) {
     }   
 
 })();    
-
-
-Calculate(20)
-    .add(10)
-    .result();
